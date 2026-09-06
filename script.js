@@ -17,7 +17,12 @@ function openMap() {
             { name: 'Jaguar', lat: -10.0, lon: -60.0, region: 'Amazon Rainforest', icon: '🐆' },
             { name: 'Mountain Gorilla', lat: -1.0, lon: 29.0, region: 'Rwanda', icon: '🦍' },
             { name: 'Giraffe', lat: -3.0, lon: 37.0, region: 'Tanzania', icon: '🦒' },
-            { name: 'African Lion', lat: -2.0, lon: 35.0, region: 'Serengeti', icon: '🦁' }
+            { name: 'African Lion', lat: -2.0, lon: 35.0, region: 'Serengeti', icon: '🦁' },
+            { name: 'Black Bear', lat: 56.0, lon: -131.0, region: 'Tongass, Alaska', icon: '🐻' },
+            { name: 'Snow Leopard', lat: 30.0, lon: 80.0, region: 'Himalayas', icon: '❄️' },
+            { name: 'African Penguin', lat: -33.0, lon: 18.0, region: 'South Africa', icon: '🐧' },
+            { name: 'Sea Nettles', lat: 33.0, lon: -118.0, region: 'Pacific Ocean', icon: '🪼' },
+            { name: 'Sea Lion', lat: 50.0, lon: -126.0, region: 'Hanson Island, Canada', icon: '🦭' }
         ];
 
         for (var i = 0; i < animals.length; i++) {
@@ -38,9 +43,9 @@ function closeMap() { document.getElementById('map-section').style.display = 'no
 function switchCam(animalName, youtubeId) {
     var iframe = document.getElementById('live-cam-iframe');
     var title = document.getElementById('cam-title');
-    iframe.src = "https://www.youtube.com/embed/" + youtubeId + "?autoplay=1";
+    iframe.src = "https://www.youtube.com/embed/" + youtubeId + "?autoplay=1&mute=1";
     title.innerText = "Now Watching: " + animalName;
-    var btns = document.getElementsByClassName('animal-btn');
+    var btns = document.getElementsByClassName('ani-btn');
     for (var i = 0; i < btns.length; i++) { btns[i].classList.remove('active'); }
     event.currentTarget.classList.add('active');
 }
