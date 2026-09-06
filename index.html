@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Added these missing layout styles to style.css so the dashboard and sidebar format correctly */
+        .cams-db { display: flex; max-width: 1200px; margin: 0 auto; background: #243924; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); text-align: left; border: 1px solid #4caf50; }
+        .cams-db > div:first-child { width: 350px; background: #243924; padding: 20px 0; overflow-y: auto; border-right: 1px solid #4caf50; max-height: 550px; display: flex; flex-direction: column; }
+        .cams-db h4 { color: #8bc34a; padding: 10px 20px; text-transform: uppercase; font-size: 0.9rem; border-bottom: 1px solid #4caf50; margin-bottom: 10px; width: 100%; }
+        .ani-btn { display: flex; align-items: center; width: 100%; text-align: left; background: none; border: none; color: #ecf0f1; padding: 12px 20px; cursor: pointer; font-size: 1rem; transition: background 0.2s; border-bottom: 1px solid #1a2e22; }
+        .ani-btn:hover { background: #1a2e22; }
+        .ani-btn.active { background: #4caf50; color: #fff; font-weight: bold; }
+        .ani-btn span { margin-left: 10px; flex: 1; }
+        .tag-arctic { background: #80deea; color: #000; }
+    </style>
 </head>
 <body>
     <nav>
@@ -18,7 +29,6 @@
             <li><a href="#" onclick="closeMap()">Donate & Resources</a></li>
         </ul>
     </nav>
-
 
     <div class="hero">
         <h1>Explore Nature's Map</h1>
@@ -85,25 +95,27 @@
         <h2>Global Live Wildlife Cams</h2>
         <p>Watch animals live from around the world, sorted by the continent they are from.</p>
         <div class="cams-db">
-            <h4>Africa</h4>
-            <button class="ani-btn active" onclick="switchCam('Tau Waterhole (Madikwe)', 'DsNtwGJXTTs')"><span>💧 Tau Waterhole</span><div class="biome-tag tag-savanna">Savanna</div></button>
-            
-            <h4>North America</h4>
-            <button class="ani-btn" onclick="switchCam('Brooks Falls Brown Bears', 'J7ZrIDvqlic')"><span>🐻 Brooks Falls Bears</span><div class="biome-tag tag-forest">Forest</div></button>
-            <button class="ani-btn" onclick="switchCam('Black Bear (Anan Observatory)', 'RhP-_jX8-Zs')"><span>🐻 Black Bears</span><div class="biome-tag tag-forest">Forest</div></button>
-            <button class="ani-btn" onclick="switchCam('West Coast Sea Nettles', 'IYG9fnz40-E')"><span>🪼 Jellyfishes</span><div class="biome-tag tag-marine">Marine</div></button>
-            <button class="ani-btn" onclick="switchCam('Tigers (Turpentine Creek)', 'eeMDlq_kQpQ')"><span>🐅 Tigers</span><div class="biome-tag tag-forest">Forest</div></button>
-            <button class="ani-btn" onclick="switchCam('Saint Louis Zoo Penguins', 'hHLlZhianIQ')"><span>🐧 Penguins</span><div class="biome-tag tag-marine">Marine</div></button>
-            <button class="ani-btn" onclick="switchCam('Sea Lion Beach (OrcaLab)', '-uooI2satIQ')"><span>🦭 Sea Lion Beach</span><div class="biome-tag tag-marine">Marine</div></button>
-            <button class="ani-btn" onclick="switchCam('Polar Bear (Kansas City Zoo)', 'BSUnBPvX9K4')"><span>🐻‍❄️ Polar Bears </span><div class="biome-tag tag-arctic">Arctic</div></button>
-            <h4>Asia</h4>
-            <button class="ani-btn" onclick="switchCam('Gorilla Forest Corridor', 'YaDkA5CkFXk')"><span>🦍 Gorilla Forest</span><div class="biome-tag tag-forest">Rainforest</div></button>
-            <button class="ani-btn" onclick="switchCam('Giant Panda Yard (Gengda)', 'BsZEOvS3qTM')"><span>🐼 Giant Pandas</span><div class="biome-tag tag-forest">Bamboo Forest</div></button>
+            <div class="cams-sidebar">
+                <h4>Africa</h4>
+                <button class="ani-btn active" onclick="switchCam('Tau Waterhole (Madikwe)', 'DsNtwGJXTTs')"><span>💧 Tau Waterhole</span><div class="biome-tag tag-savanna">Savanna</div></button>
+                
+                <h4>North America</h4>
+                <button class="ani-btn" onclick="switchCam('Brooks Falls Brown Bears', 'J7ZrIDvqlic')"><span>🐻 Brooks Falls Bears</span><div class="biome-tag tag-forest">Forest</div></button>
+                <button class="ani-btn" onclick="switchCam('Black Bear (Anan Observatory)', 'RhP-_jX8-Zs')"><span>🐻 Black Bears</span><div class="biome-tag tag-forest">Forest</div></button>
+                <button class="ani-btn" onclick="switchCam('West Coast Sea Nettles', 'IYG9fnz40-E')"><span>🪼 Jellyfishes</span><div class="biome-tag tag-marine">Marine</div></button>
+                <button class="ani-btn" onclick="switchCam('Tigers (Turpentine Creek)', 'eeMDlq_kQpQ')"><span>🐅 Tigers</span><div class="biome-tag tag-forest">Forest</div></button>
+                <button class="ani-btn" onclick="switchCam('Saint Louis Zoo Penguins', 'hHLlZhianIQ')"><span>🐧 Penguins</span><div class="biome-tag tag-marine">Marine</div></button>
+                <button class="ani-btn" onclick="switchCam('Sea Lion Beach (OrcaLab)', '-uooI2satIQ')"><span>🦭 Sea Lion Beach</span><div class="biome-tag tag-marine">Marine</div></button>
+                <button class="ani-btn" onclick="switchCam('Polar Bear (Kansas City Zoo)', 'BSUnBPvX9K4')"><span>🐻‍❄️ Polar Bears </span><div class="biome-tag tag-arctic">Arctic</div></button>
+                
+                <h4>Asia</h4>
+                <button class="ani-btn" onclick="switchCam('Gorilla Forest Corridor', 'YaDkA5CkFXk')"><span>🦍 Gorilla Forest</span><div class="biome-tag tag-forest">Rainforest</div></button>
+                <button class="ani-btn" onclick="switchCam('Giant Panda Yard (Gengda)', 'BsZEOvS3qTM')"><span>🐼 Giant Pandas</span><div class="biome-tag tag-forest">Bamboo Forest</div></button>
 
-            <h4>Oceania</h4>
-            <button class="ani-btn" onclick="switchCam('Zoos Victoria Snow Leopard', '4wb6o3QvrxY')"><span>❄️ Snow Leopards</span><div class="biome-tag tag-tundra">Tundra</div></button>
-            <button class="ani-btn" onclick="switchCam('Zoos Victoria Penguins', '3CAU9Ex_GKk')"><span>🐧 Penguins</span><div class="biome-tag tag-marine">Marine</div></button>
-        </div>
+                <h4>Oceania</h4>
+                <button class="ani-btn" onclick="switchCam('Zoos Victoria Snow Leopard', '4wb6o3QvrxY')"><span>❄️ Snow Leopards</span><div class="biome-tag tag-tundra">Tundra</div></button>
+                <button class="ani-btn" onclick="switchCam('Zoos Victoria Penguins', '3CAU9Ex_GKk')"><span>🐧 Penguins</span><div class="biome-tag tag-marine">Marine</div></button>
+            </div>
             <div class="video-main">
                 <div class="video-header">
                     <h3 id="cam-title">Now Watching: Tau Waterhole</h3>
