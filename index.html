@@ -36,7 +36,7 @@
             <p>Countries & Territories</p>
         </div>
         <div class="stat-item">
-            <h2>31+</h2>
+            <h2>12+</h2>
             <p>Live Wildlife Cameras</p>
         </div>
     </div>
@@ -82,50 +82,34 @@
     </div>
 
     <div class="zoo-cams" id="cam">
-        <h2>Global Live Wildlife</h2>
-        <p>Observe animals from the San Diego Zoo, Reid Park Zoo, and Georgia Aquarium.</p>
-        <div class="cams-dashboard">
-            <div class="cams-sidebar">
-                <h4>San Diego Zoo</h4>
-                <button class="animal-btn active" onclick="switchCam('Tigers', '4_GZUNpQZjw')"><span>🐅 Tigers</span><div class="biome-tag tag-savanna">Savanna</div></button>
-                <button class="animal-btn" onclick="switchCam('Elephants', 'vHC7FbMtnUg')"><span>🐘 Elephants</span><div class="biome-tag tag-savanna">Forests</div></button>
-                <button class="animal-btn" onclick="switchCam('Hippos', 'jxj85hfba1U')"><span>🦛 Hippo</span><div class="biome-tag tag-savanna">Savanna</div></button>
-                <button class="animal-btn" onclick="switchCam('Conder', 'eV4D5KBPsK8')"><span>🪶 Condors</span><div class="biome-tag tag-forest">Forest</div></button>
-                <button class="animal-btn" onclick="switchCam('baboons', '2A2820mNvD8')"><span>🐒 Baboons</span><div class="biome-tag tag-forest">Savanna</div></button>
-                <button class="animal-btn" onclick="switchCam('Penguins', '2A2820mNvD8')"><span>🐧 Penguins</span><div class="biome-tag tag-forest">Marine</div></button>
-                <button class="animal-btn" onclick="switchCam('Polar Bears', 'jxj85hfba1U')"><span>🐻‍❄️ Polar Bears</span><div class="biome-tag tag-tundra">Tundra</div></button>
-                <button class="animal-btn" onclick="switchCam('Apes', 'vHC7fbMtnUg')"><span>🦧 Apes</span><div class="biome-tag tag-rainforest">Rainforest</div></button>
-                <button class="animal-btn" onclick="switchCam('Giraffes', 'eV4C7FbMtgUg')"><span>🦒 Giraffes</span><div class="biome-tag tag-savanna">Savanna</div></button>
-                <button class="animal-btn" onclick="switchCam('Koalas', '2A2820mNvD8')"><span>🐨 Koalas</span><div class="biome-tag tag-rainforest">Forest</div></button>
-                <button class="animal-btn" onclick="switchCam('Giant Panda', '2A2820mNvD8')"><span>🐼 Giant Panda</span><div class="biome-tag tag-rainforest">Bamboo Forest</div></button>
-                <button class="animal-btn" onclick="switchCam('Burrowing Owls', 'eV4D5KBPsK8')"><span>🦉 Burrowing Owls</span><div class="biome-tag tag-desert">Desert</div></button>
-                <button class="animal-btn" onclick="switchCam('Red Panda', '2A2820mNvD8')"><span>🦊 Red Panda</span><div class="biome-tag tag-rainforest">Bamboo Forest</div></button>
-                <h4>Reid Park Zoo</h4>
-                <button class="animal-btn" onclick="switchCam('Lions', 'jxj85hfba1U')"><span>🦁 Lions</span><div class="biome-tag tag-savanna">Savanna</div></button>
-                <button class="animal-btn" onclick="switchCam('Giraffes', 'vHC7FbMtnUg')"><span>🦒 Giraffes</span><div class="biome-tag tag-savanna">Savanna</div></button>
-                <button class="animal-btn" onclick="switchCam('Elephants', 'wJyuI3O-AB0')"><span>🐘 Elephants</span><div class="biome-tag tag-savanna">Savanna</div></button>
-                <button class="animal-btn" onclick="switchCam('Sloths', 'wJyuI3O-AB0')"><span>🦥 Sloths</span><div class="biome-tag tag-rainforest">Rainforest</div></button>
-                <button class="animal-btn" onclick="switchCam('Andean Bears', 'wJyuI3O-AB0')"><span>🐻 Andean Bears</span><div class="biome-tag tag-rainforest">Rainforest</div></button>
-                <button class="animal-btn" onclick="switchCam('Lemurs & Duikers', 'wJyuI3O-AB0')"><span>🐾 Lemurs</span><div class="biome-tag tag-rainforest">Forest</div></button>
-                <button class="animal-btn" onclick="switchCam('Flamingos', 'wJyuI3O-AB0')"><span>🦩 Flamingos</span><div class="biome-tag tag-marine">Marine</div></button>
-                <button class="animal-btn" onclick="switchCam('African Wild Dogs', 'wJyuI3O-AB0')"><span>🐺🐾 African Wild Dogs</span><div class="biome-tag tag-savanna">Savanna</div></button>
+        <h2>Global Live Wildlife Cams</h2>
+        <p>Watch animals live from around the world, sorted by the continent they are from.</p>
+        <div class="cams-db">
+            <h4>Africa</h4>
+            <button class="ani-btn active" onclick="switchCam('Tau Waterhole (Madikwe)', 'DsNtwGXTTs')"><span>💧 Tau Waterhole</span><div class="biome-tag tag-savanna">Savanna</div></button>
+            
+            <h4>North America</h4>
+            <button class="ani-btn" onclick="switchCam('Brooks Falls Brown Bears', 'J7ZrIDvqlic')"><span>🐻 Brooks Falls Bears</span><div class="biome-tag tag-forest">Forest</div></button>
+            <button class="ani-btn" onclick="switchCam('Black Bear (Anan Observatory)', 'Rhp-_jx-Zs')"><span>🐻 Black Bears</span><div class="biome-tag tag-forest">Forest</div></button>
+            <button class="ani-btn" onclick="switchCam('West Coast Sea Nettles', 'IYG9fnz40-E')"><span>🪼 Jellyfishes</span><div class="biome-tag tag-marine">Marine</div></button>
+            <button class="ani-btn" onclick="switchCam('Tigers (Turpentine Creek)', 'eeMDlq_kQpQ')"><span>🐅 Tigers</span><div class="biome-tag tag-forest">Forest</div></button>
+            <button class="ani-btn" onclick="switchCam('Saint Louis Zoo Penguins', 'hHLlZhianIQ')"><span>🐧 Penguins</span><div class="biome-tag tag-marine">Marine</div></button>
+            <button class="ani-btn" onclick="switchCam('Sea Lion Beach (OrcaLab)', '-uooI2satIQ')"><span>🦭 Sea Lion Beach</span><div class="biome-tag tag-marine">Marine</div></button>
+            <button class="ani-btn" onclick="switchCam('Polar Bear (Kansas City Zoo)', 'BSUnBPvX9K4')"><span>🐻‍❄️ Polar Bears </span><div class="biome-tag tag-arctic">Arctic</div></button>
+            <h4>Asia</h4>
+            <button class="ani-btn" onclick="switchCam('Gorilla Forest Corridor', 'YaDkA5CkFXk')"><span>🦍 Gorilla Forest</span><div class="biome-tag tag-forest">Rainforest</div></button>
+            <button class="ani-btn" onclick="switchCam('Giant Panda Yard (Gengda)', 'BsZEOvS3qTM')"><span>🐼 Giant Pandas</span><div class="biome-tag tag-forest">Bamboo Forest</div></button>
 
-                <h4>Georgia Aquarium</h4>
-                <button class="animal-btn" onclick="switchCam('SHARKS! Predators of the Deep', 'W1m6vW3mPYI')"><span>🦈 Sharks</span><div class="biome-tag tag-marine">Marine</div></button>
-                <button class="animal-btn" onclick="switchCam('Beluga Whales', 'r9fvY8J5qEo')"><span>🐋 Beluga Whales</span><div class="biome-tag tag-marine">Marine</div></button>
-                <button class="animal-btn" onclick="switchCam('Ocean Voyager (Whale Sharks)', '1nE10ySbqKQ')"><span>🦈 Whale Sharks</span><div class="biome-tag tag-marine">Marine</div></button>
-                <button class="animal-btn" onclick="switchCam('Southern Sea Otters', 'qZ4n7F5f2Q8')"><span>🦦 Sea Otters</span><div class="biome-tag tag-marine">Marine</div></button>
-                <button class="animal-btn" onclick="switchCam('California Sea Lion', '8a8p6M2o0o4')"><span>🦭 Sea Lions</span><div class="biome-tag tag-marine">Marine</div></button>
-                <button class="animal-btn" onclick="switchCam('Indo-Pacific Barrier Reef', '5p6o7R8s9T0')"><span>🐠 Indo-Pacific Barrier Reef</span><div class="biome-tag tag-marine">Marine</div></button>
-                <button class="animal-btn" onclick="switchCam('African Penguins', '9v8w7U6t5s4')"><span>🐧 African Penguins</span><div class="biome-tag tag-marine">Marine</div></button>
-                <button class="animal-btn" onclick="switchCam('Underwater Puffins', '1q2w3e4r5t6')"><span>🦤 Underwater Puffins</span><div class="biome-tag tag-marine">Marine</div></button>
-            </div>
+            <h4>Oceania</h4>
+            <button class="ani-btn" onclick="switchCam('Zoos Victoria Snow Leopard', '4wb6o3QvrxY')"><span>❄️ Snow Leopards</span><div class="biome-tag tag-tundra">Tundra</div></button>
+            <button class="ani-btn" onclick="switchCam('Zoos Victoria Penguins', '3CAU9Ex_GKk')"><span>🐧 Penguins</span><div class="biome-tag tag-marine">Marine</div></button>
+        </div>
             <div class="video-main">
                 <div class="video-header">
-                    <h3 id="cam-title">Now Watching: Tigers</h3>
+                    <h3 id="cam-title">Now Watching: Tau Waterhole</h3>
                 </div>
                 <div class="video-wrapper">
-                    <iframe id="live-cam-iframe" src="https://www.youtube.com/embed/4_GZUNpQZjw?autoplay=1" title="Live Wildlife Cam" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="live-cam-iframe" src="https://www.youtube.com/embed/DsNtwGJXTTs?autoplay=1&mute=1" title="Live Wildlife Cam" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
