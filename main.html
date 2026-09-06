@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature's Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo" onclick="closeMap()">🌿 Nature's Map</div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="closeMap()">Platform</a></li>
+            <li><a href="#" onclick="closeMap()">Biomes</a></li>
+            <li><a href="#" onclick="closeMap()">Live Cameras</a></li>
+            <li><a href="#" onclick="closeMap()">Donate & Resources</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="hero">
+        <h1>Explore Nature's Map</h1>
+        <p>Look at animals and habitats from around the world. Watch live wildlife, track animals, and explore the what Mother Nature made.</p>
+        <a href="#" class="btn-maps" onclick="openMap()">Explore the Map</a>
+    </div>
+
+    <div class="stats">
+        <div class="stat-item">
+            <h2>450,000+</h2>
+            <p>Species Mapped</p>
+        </div>
+        <div class="stat-item">
+            <h2>196+</h2>
+            <p>Countries & Territories</p>
+        </div>
+        <div class="stat-item">
+            <h2>31+</h2>
+            <p>Live Wildlife Cameras</p>
+        </div>
+    </div>
+    <div class="biomes-section" id="biomes">
+        <div class="sectioon" style="padding: 0 0 40px 0;"></div>
+            <h2>Explore the Biomes</h2>
+            <p>Learn about the different ecosystems that make up our planet and the animals that call them home.</p>
+    </div>
+    <div class="biomes-grid">
+            <div class="biome-card">
+                <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80" alt="Basically MC Jungle">
+                <div class="biome-overlay"><h3>Tropical Rainforest</h3><p>Warm, wet, and home to over half of all of the worl'd plants and animal species.</p></div>
+                
+        </div>
+        <div class="biome-card">
+            <img src="https://z-cdn-media.chatglm.cn/files/78581ee8-6eda-4c8f-9c60-11cc420b8a8e.png?auth_key=1888118725-9c6666dca1d24fb28be0aea1ed9c2e12-0-38810324a7c1fdd22aefc93c04fa98d7" alt="Savannah">
+            <div class="biome-overlay"><h3>Savanna</h3><p>Greasslands with scattered trees, famours for large herbivores and predators.</p></div>
+        </div>
+        <div class="biome-card">
+            <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=600&q=80" alt="Ocen">
+            <div class="biome-overlay"><h3>Oceans</h3><p>Covers around 70% of our world. This is where all life started from.</p></div>
+        </div>
+        <div class="biome-card">
+            <img src="https://images.unsplash.com/photo-1418985991508-e47386d96a71?auto=format&fit=crop&w=600&q=80" alt="Snow">
+            <div class="biome-overlay"><h3>Tundra</h3><p>Very cold places where animals like polar bears and artic foxes live</p></div>
+        </div>
+        <div class="biome-card">
+            <img src="https://z-cdn-media.chatglm.cn/files/7d411faf-eb72-45a0-9a26-0dde66cd5daa.png?auth_key=1888118725-fe78f7a939ec4f0487413a349cfc3e0e-0-0199ac3002f2b4810fffa8d564c96b43" alt="desert">
+            <div class="biome-verlay"><h3>Desert</h3><p>Dry Areas usually filled with sand. Did you know Antartica is a desert?</p></div>
+        </div>
+        <div class="biome-card">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80" alt="birch forest">
+            <div class="biome-overlay"><h3>Broadleaf Forest</h3><p>Forests with four distinct seasons, home to bears, deer and owls.</p></div>
+        </div>
+        <div class="biome-card">
+            <img src="https://z-cdn-media.chatglm.cn/files/a0f7ce0b-39e7-4372-b37d-028a500e94f6.png?auth_key=1888118464-babb4667e6dc4804b465d8ebde73b43d-0-09e7ad2fb97f741f1f9c3e1fca377e64" alt="swamp">
+            <div class="biome-overlay"><h3>Wetlands</h3><p>Swamps and marshes, vital for water purification.</p></div>
+        </div>
+        <div class="biome-card">
+            <img src="https://www.activewild.com/wp-content/uploads/2016/05/Wild-Cats-List-Puma.jpg" alt="Chaparall">
+            <div class="biome-overlay"><h3>Chaparall</h3><p>Shrubland plant community with a Mediterranean climate of mild, wet winters and hot, dry summers.</p></div>
+        </div>
+    </div>
+
+    <div class="zoo-cams" id="cam">
+        <h2>Global Live Wildlife</h2>
+        <p>Observe animals from the San Diego Zoo, Reid Park Zoo, and Georgia Aquarium.</p>
+        <div class="cams-dashboard">
+            <div class="cams-sidebar">
+                <h4>San Diego Zoo</h4>
+                <button class="animal-btn active" onclick="switchCam('Tigers', '4_GZUNpQZjw')"><span>🐅 Tigers</span><div class="biome-tag tag-savanna">Savanna</div></button>
+                <button class="animal-btn" onclick="switchCam('Elephants', 'vHC7FbMtnUg')"><span>🐘 Elephants</span><div class="biome-tag tag-savanna">Forests</div></button>
+                <button class="animal-btn" onclick="switchCam('Hippos', 'jxj85hfba1U')"><span>🦛 Hippo</span><div class="biome-tag tag-savanna">Savanna</div></button>
+                <button class="animal-btn" onclick="switchCam('Conder', 'eV4D5KBPsK8')"><span>🪶 Condors</span><div class="biome-tag tag-forest">Forest</div></button>
+                <button class="animal-btn" onclick="switchCam('baboons', '2A2820mNvD8')"><span>🐒 Baboons</span><div class="biome-tag tag-forest">Savanna</div></button>
+                <button class="animal-btn" onclick="switchCam('Penguins', '2A2820mNvD8')"><span>🐧 Penguins</span><div class="biome-tag tag-forest">Marine</div></button>
+                <button class="animal-btn" onclick="switchCam('Polar Bears', 'jxj85hfba1U')"><span>🐻‍❄️ Polar Bears</span><div class="biome-tag tag-tundra">Tundra</div></button>
+                <button class="animal-btn" onclick="switchCam('Apes', 'vHC7fbMtnUg')"><span>🦧 Apes</span><div class="biome-tag tag-rainforest">Rainforest</div></button>
+                <button class="animal-btn" onclick="switchCam('Giraffes', 'eV4C7FbMtgUg')"><span>🦒 Giraffes</span><div class="biome-tag tag-savanna">Savanna</div></button>
+                <button class="animal-btn" onclick="switchCam('Koalas', '2A2820mNvD8')"><span>🐨 Koalas</span><div class="biome-tag tag-rainforest">Forest</div></button>
+                <button class="animal-btn" onclick="switchCam('Giant Panda', '2A2820mNvD8')"><span>🐼 Giant Panda</span><div class="biome-tag tag-rainforest">Bamboo Forest</div></button>
+                <button class="animal-btn" onclick="switchCam('Burrowing Owls', 'eV4D5KBPsK8')"><span>🦉 Burrowing Owls</span><div class="biome-tag tag-desert">Desert</div></button>
+                <button class="animal-btn" onclick="switchCam('Red Panda', '2A2820mNvD8')"><span>🦊 Red Panda</span><div class="biome-tag tag-rainforest">Bamboo Forest</div></button>
+                <h4>Reid Park Zoo</h4>
+                <button class="animal-btn" onclick="switchCam('Lions', 'jxj85hfba1U')"><span>🦁 Lions</span><div class="biome-tag tag-savanna">Savanna</div></button>
+                <button class="animal-btn" onclick="switchCam('Giraffes', 'vHC7FbMtnUg')"><span>🦒 Giraffes</span><div class="biome-tag tag-savanna">Savanna</div></button>
+                <button class="animal-btn" onclick="switchCam('Elephants', 'wJyuI3O-AB0')"><span>🐘 Elephants</span><div class="biome-tag tag-savanna">Savanna</div></button>
+                <button class="animal-btn" onclick="switchCam('Sloths', 'wJyuI3O-AB0')"><span>🦥 Sloths</span><div class="biome-tag tag-rainforest">Rainforest</div></button>
+                <button class="animal-btn" onclick="switchCam('Andean Bears', 'wJyuI3O-AB0')"><span>🐻 Andean Bears</span><div class="biome-tag tag-rainforest">Rainforest</div></button>
+                <button class="animal-btn" onclick="switchCam('Lemurs & Duikers', 'wJyuI3O-AB0')"><span>🐾 Lemurs</span><div class="biome-tag tag-rainforest">Forest</div></button>
+                <button class="animal-btn" onclick="switchCam('Flamingos', 'wJyuI3O-AB0')"><span>🦩 Flamingos</span><div class="biome-tag tag-marine">Marine</div></button>
+                <button class="animal-btn" onclick="switchCam('African Wild Dogs', 'wJyuI3O-AB0')"><span>🐺🐾 African Wild Dogs</span><div class="biome-tag tag-savanna">Savanna</div></button>
+
+                <h4>Georgia Aquarium</h4>
+                <button class="animal-btn" onclick="switchCam('SHARKS! Predators of the Deep', 'W1m6vW3mPYI')"><span>🦈 Sharks</span><div class="biome-tag tag-marine">Marine</div></button>
+                <button class="animal-btn" onclick="switchCam('Beluga Whales', 'r9fvY8J5qEo')"><span>🐋 Beluga Whales</span><div class="biome-tag tag-marine">Marine</div></button>
+                <button class="animal-btn" onclick="switchCam('Ocean Voyager (Whale Sharks)', '1nE10ySbqKQ')"><span>🦈 Whale Sharks</span><div class="biome-tag tag-marine">Marine</div></button>
+                <button class="animal-btn" onclick="switchCam('Southern Sea Otters', 'qZ4n7F5f2Q8')"><span>🦦 Sea Otters</span><div class="biome-tag tag-marine">Marine</div></button>
+                <button class="animal-btn" onclick="switchCam('California Sea Lion', '8a8p6M2o0o4')"><span>🦭 Sea Lions</span><div class="biome-tag tag-marine">Marine</div></button>
+                <button class="animal-btn" onclick="switchCam('Indo-Pacific Barrier Reef', '5p6o7R8s9T0')"><span>🐠 Indo-Pacific Barrier Reef</span><div class="biome-tag tag-marine">Marine</div></button>
+                <button class="animal-btn" onclick="switchCam('African Penguins', '9v8w7U6t5s4')"><span>🐧 African Penguins</span><div class="biome-tag tag-marine">Marine</div></button>
+                <button class="animal-btn" onclick="switchCam('Underwater Puffins', '1q2w3e4r5t6')"><span>🦤 Underwater Puffins</span><div class="biome-tag tag-marine">Marine</div></button>
+            </div>
+            <div class="video-main">
+                <div class="video-header">
+                    <h3 id="cam-title">Now Watching: Tigers</h3>
+                </div>
+                <div class="video-wrapper">
+                    <iframe id="live-cam-iframe" src="https://www.youtube.com/embed/4_GZUNpQZjw?autoplay=1" title="Live Wildlife Cam" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Biodiversity Indicators</h2>
+        <p>Nature's Map GBF-adopted indicators are used to track global, national, and regional progress towards our biodiversity goals.</p>
+        <br>
+        <div class="cards">
+            <div class="card"><h3>Species Protection Index</h3></div>
+            <div class="card"><h3>Species Habitat Index</h3></div>
+            <div class="card"><h3>Species Information Index</h3></div>
+        </div>
+    </div>
+    <div class="donate-section">
+        <h2>Support Saving Our World</h2>
+        <p>Your support helps protect the incredible species and habitats you have just explored. Partner with the World Wildlife Fund to help make a difference.</p>
+        <a href="https://www.worldwildlife.org/about/" target="_blank" class="btn-donate">Donate to WWF</a>
+    </div>
+    
+    <footer>
+        <p>Humans May Rule the World. A True Leader Helps Everyone Under Their Rule!</p>
+        <p>Copyright © 2026 Nature's Map Platform</p>
+    </footer>
+    <div id="map-section">
+        <div class="map-header"><h2>Global Wildlife Habitats</h2></div>
+        <button class="close-map" onclick="closeMap()">Close Map (X)</button>
+        <div id="map"></div>
+    </div>
+
+    <div id="mrbunny-fab">🐰</div>
+    <div id="mrbunny-panel">
+        <div id="bhdr">
+            <div id="bav">🐰</div>
+            <div id="bhtx">
+                <div id="btitle">MrBunny AI</div>
+                <div id="bsub">Nature's Map Assistant</div>
+            </div>
+        </div>
+        <div id="bmsgs">
+            <div class="bwb">
+                <div class="blb">MrBunny</div>
+                <div class="bbot">Hey! I'm MrBunny, your Nature's Map assistant! I am a digitalized bunny!</div>
+            </div>
+        </div>
+        <div id="bbar">
+            <input type="text" id="binp" placeholder="Ask MrBunny anything...">
+            <button id="bbtn">➤</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
