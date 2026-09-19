@@ -6,7 +6,6 @@ function openMap() {
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: '© Esri', maxZoom: 18
         }).addTo(map);
-        
         var animals = [
             { name: 'Bengal Tiger', lat: 25.0, lon: 80.0, region: 'India', icon: '🐯' },
             { name: 'African Elephant', lat: -2.0, lon: 36.0, region: 'Kenya', icon: '🐘' },
@@ -140,7 +139,6 @@ function sendMsg() {
         inp.disabled = false; btn.disabled = false; inp.focus();
         return;
     }
-
     callAI(messages, function(reply, err) {
         setJTyping(false);
         if (err) {
