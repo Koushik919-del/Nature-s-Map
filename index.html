@@ -8,7 +8,6 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Added these missing layout styles to style.css so the dashboard and sidebar format correctly */
         .cams-db { display: flex; max-width: 1200px; margin: 0 auto; background: #243924; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); text-align: left; border: 1px solid #4caf50; }
         .cams-db > div:first-child { width: 350px; background: #243924; padding: 20px 0; overflow-y: auto; border-right: 1px solid #4caf50; max-height: 550px; display: flex; flex-direction: column; }
         .cams-db h4 { color: #8bc34a; padding: 10px 20px; text-transform: uppercase; font-size: 0.9rem; border-bottom: 1px solid #4caf50; margin-bottom: 10px; width: 100%; }
@@ -30,6 +29,7 @@
         </ul>
     </nav>
 
+    
     <div class="hero">
         <h1>Explore Nature's Map</h1>
         <p>Look at animals and habitats from around the world. Watch live wildlife, track animals, and explore the what Mother Nature made.</p>
@@ -59,6 +59,7 @@
             <div class="biome-card">
                 <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80" alt="Basically MC Jungle">
                 <div class="biome-overlay"><h3>Tropical Rainforest</h3><p>Warm, wet, and home to over half of all of the world's plants and animal species.</p></div>
+
                 
         </div>
         <div class="biome-card">
@@ -90,7 +91,6 @@
             <div class="biome-overlay"><h3>Chaparral</h3><p>Shrubland plant community with a Mediterranean climate of mild, wet winters and hot, dry summers.</p></div>
         </div>
     </div>
-
     <div class="zoo-cams" id="cam">
         <h2>Global Live Wildlife Cams</h2>
         <p>Watch animals live from around the world, sorted by the continent they are from.</p>
@@ -106,12 +106,12 @@
                 <button class="ani-btn" onclick="switchCam('Tigers (Turpentine Creek)', 'eeMDlq_kQpQ')"><span>Tigers</span><div class="biome-tag tag-forest">Forest</div></button>
                 <button class="ani-btn" onclick="switchCam('Saint Louis Zoo Penguins', 'hHLlZhianIQ')"><span>Penguins</span><div class="biome-tag tag-marine">Marine</div></button>
                 <button class="ani-btn" onclick="switchCam('Sea Lion Beach (OrcaLab)', '-uooI2satIQ')"><span>Sea Lion Beach</span><div class="biome-tag tag-marine">Marine</div></button>
-                <button class="ani-btn" onclick="switchCam('Polar Bear (Kansas City Zoo)', 'BSUnBPvX9K4')"><span>Polar Bears </span><div class="biome-tag tag-arctic">Arctic</div></button>
-                
+                <button class="ani-btn" onclick="switchCam('Polar Bear (Kansas City Zoo)', 'BSUnBPvX9K4')"><span>Polar Bears </span><div class="biome-tag tag-arctic">Arctic</div></button> 
                 <h4>Asia</h4>
                 <button class="ani-btn" onclick="switchCam('Gorilla Forest Corridor', 'YaDkA5CkFXk')"><span>Gorilla Forest</span><div class="biome-tag tag-forest">Rainforest</div></button>
                 <button class="ani-btn" onclick="switchCam('Giant Panda Yard (Gengda)', 'BsZEOvS3qTM')"><span>Giant Pandas</span><div class="biome-tag tag-forest">Bamboo Forest</div></button>
 
+                
                 <h4>Oceania</h4>
                 <button class="ani-btn" onclick="switchCam('Zoos Victoria Snow Leopard', '4wb6o3QvrxY')"><span>Snow Leopards</span><div class="biome-tag tag-tundra">Tundra</div></button>
                 <button class="ani-btn" onclick="switchCam('Zoos Victoria Penguins', '3CAU9Ex_GKk')"><span>Penguins</span><div class="biome-tag tag-marine">Marine</div></button>
@@ -126,7 +126,6 @@
             </div>
         </div>
     </div>
-
     <div class="section">
         <h2>Biodiversity Indicators</h2>
         <p>Nature's Map GBF-adopted indicators are used to track global, national, and regional progress towards our biodiversity goals.</p>
@@ -142,14 +141,15 @@
         <p>Your support helps protect the incredible species and habitats you have just explored. Partner with the World Wildlife Fund to help make a difference.</p>
         <a href="https://www.worldwildlife.org/about/" target="_blank" class="btn-donate">Donate to WWF</a>
     </div>
-    
+
+
     <footer>
         <p>Humans May Rule the World. A True Leader Helps Everyone Under Their Rule!</p>
         <p>Copyright © 2026 Nature's Map Platform</p>
     </footer>
     <div id="map-section">
         <div class="map-header"><h2>Global Wildlife Habitats</h2></div>
-        <button class="close-map" onclick="closeMap()">Close Map (X)</button>
+        <button class="close-map" onclick="closeMap()">Exit Map</button>
         <div id="map"></div>
     </div>
 
