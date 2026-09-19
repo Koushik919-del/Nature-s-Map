@@ -74,6 +74,8 @@ nav { background: #1a2e22; padding: 20px 50px; display: flex; justify-content: s
 footer { background: #1a2e22; color: #fff; padding: 50px; text-align: center; }
 footer p { margin-bottom: 10px; color: #bdc3c7; }
 
+
+
 #mrbunny-fab { position: fixed; bottom: 24px; right: 24px; width: 54px; height: 54px; background: #4caf50; border-radius: 50%; border: 2px solid #8bc34a; font-size: 1.45rem; cursor: pointer; box-shadow: 0 4px 18px rgba(0,0,0,.65); display: flex; align-items: center; justify-content: center; z-index: 2147483647; transition: transform .15s; user-select: none; }
 #mrbunny-fab:hover { transform: scale(1.1); }
 #mrbunny-panel { position: fixed; bottom: 90px; right: 24px; width: 320px; height: 430px; background: #243924; border: 1px solid #4caf50; border-radius: 6px; box-shadow: 0 10px 44px rgba(0,0,0,.9); z-index: 2147483646; display: none; flex-direction: column; overflow: hidden; font-family: 'Segoe UI', sans-serif; }
